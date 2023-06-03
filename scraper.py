@@ -38,5 +38,15 @@ def get_first_image_url_from_google(delay, search_term):
     wd.quit()
     return None
 
+@app.route('/search-image')
+def search_image():
+    search_term = request.args.get('search_term')
+    url = get_first_image_url_from_google(1, search_term)
+
+    if url:
+        return jsonify({'status': 'success', 'url': url})
+    else:
+        return jsonify({'status': 'failed', 'message': 'No image found on page'})
+
 
 
