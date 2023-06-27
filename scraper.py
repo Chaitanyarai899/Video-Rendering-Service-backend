@@ -46,7 +46,7 @@ def search_image():
     if url:
         return jsonify({'status': 'success', 'url': url})
     else:
-        return jsonify({'status': 'failed', 'message': 'No image found on page'})
+        return jsonify({'status': 'failed', 'message': 'No related images found on this page'})
 
 
 
